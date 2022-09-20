@@ -12,11 +12,13 @@ public class StringCalculatorTest
         Assert.Equal(0, actual);
     }
 
-    [Fact]
-    public void OnlyOneNumberString()
+    [Theory]
+    [InlineData("3", 3)]
+    [InlineData("14", 14)]
+    public void OnlyOneNumberString(string input, int expected)
     {
-        var actual = StringCalculator.Add("3");
+        var actual = StringCalculator.Add(input);
 
-        Assert.Equal(3, actual);
+        Assert.Equal(expected, actual);
     }
 }
