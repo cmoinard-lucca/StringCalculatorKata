@@ -36,10 +36,9 @@ public class StringCalculatorTest
     [Theory]
     [InlineData("3,5", 8)]
     [InlineData("14,6", 20)]
-    [InlineData("100,6", 106)]
-    [InlineData("24,6", 30)]
+    [InlineData("6, 14", 20)]
+    [InlineData("100,666", 766)]
     [InlineData("971,9", 980)]
-
     public void TwoNumbersString(string input, int expected)
     {
         var actual = StringCalculator.Add(input);
