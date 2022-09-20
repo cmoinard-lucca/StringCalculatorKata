@@ -45,6 +45,18 @@ public class StringCalculatorTest
 
         Assert.Equal(expected, actual);
     }
+
+    [Theory]
+    [InlineData("3,5,6", 14)]
+    [InlineData("1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", 20)]
+    [InlineData("432, 4576,397855", 402863)]
+    [InlineData("39,0,0,0,3", 42)]
+    public void MultipleNumbersString(string input, int expected)
+    {
+        var actual = StringCalculator.Add(input);
+
+        Assert.Equal(expected, actual);
+    }
 }
 
 public static class TheoryDataExtensions
