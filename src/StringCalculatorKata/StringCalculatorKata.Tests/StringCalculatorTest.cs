@@ -21,4 +21,14 @@ public class StringCalculatorTest
 
         Assert.Equal(expected, actual);
     }
+
+    [Theory]
+    [InlineData("3,5", 8)]
+    [InlineData("14,6", 20)]
+    public void TwoNumbersString(string input, int expected)
+    {
+        var actual = StringCalculator.Add(input);
+
+        Assert.Equal(expected, actual);
+    }
 }
