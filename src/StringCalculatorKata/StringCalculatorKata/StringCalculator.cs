@@ -16,7 +16,7 @@ public static class StringCalculator
 
         var indexOfComma = numbers.IndexOf(",", StringComparison.Ordinal);
         var firstNumber = int.Parse(numbers[.. indexOfComma]);
-        var secondNumber = int.Parse(numbers[^1].ToString());
+        var secondNumber = int.Parse(numbers[(indexOfComma + 1) ..]);
         return firstNumber + secondNumber;
     }
 }
