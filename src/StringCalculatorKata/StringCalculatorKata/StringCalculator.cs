@@ -14,9 +14,8 @@ public static class StringCalculator
             return int.Parse(numbers);
         }
 
-        var indexOfComma = numbers.IndexOf(",", StringComparison.Ordinal);
-        var firstNumber = int.Parse(numbers[.. indexOfComma]);
-        var secondNumber = int.Parse(numbers[(indexOfComma + 1) ..]);
-        return firstNumber + secondNumber;
+        return numbers
+            .Split(',', StringSplitOptions.RemoveEmptyEntries)
+            .Sum(n => int.Parse(n));
     }
 }
