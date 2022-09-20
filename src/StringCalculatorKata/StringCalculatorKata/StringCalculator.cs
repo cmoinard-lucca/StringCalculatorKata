@@ -14,6 +14,6 @@ public static class StringCalculator
             return numbers == "3,5" ? 8 : 20;
         }
 
-        return numbers == "3" ? 3 : 14;
+        return int.Parse(numbers);
     }
 }
