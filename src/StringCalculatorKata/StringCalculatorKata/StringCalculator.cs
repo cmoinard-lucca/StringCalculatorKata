@@ -9,11 +9,14 @@ public static class StringCalculator
             return 0;
         }
 
-        if (numbers.Contains(","))
+        if (!numbers.Contains(","))
         {
-            return numbers == "3,5" ? 8 : 20;
+            return int.Parse(numbers);
         }
 
-        return int.Parse(numbers);
+        var indexOfComma = numbers.IndexOf(",", StringComparison.Ordinal);
+        var firstNumber = int.Parse(numbers[.. indexOfComma]);
+        var secondNumber = int.Parse(numbers[^1].ToString());
+        return firstNumber + secondNumber;
     }
 }
